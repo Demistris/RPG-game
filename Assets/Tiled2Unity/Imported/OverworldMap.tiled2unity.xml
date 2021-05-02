@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 02/05/2021 19:18:03-->
+<!--Last exported: 02/05/2021 19:42:06-->
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="OverworldMap_mesh_0001" material="Overworld" />
   <AssignMaterial mesh="OverworldMap_mesh_0002" material="Overworld" />
@@ -44,9 +44,25 @@
         <RectangleObjectComponent tmx-object-id="16" tmx-object-name="" tmx-object-type="" tmx-object-x="335.5" tmx-object-y="96" tmx-object-width="17" tmx-object-height="15.5" tmx-object-rotation="0" />
         <BoxCollider2D width="1.0625" height="0.96875" />
       </GameObject>
+      <GameObject name="PolygonObject" x="5.23863745" y="-9.27275" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="29" tmx-object-name="" tmx-object-type="" tmx-object-x="83.8182" tmx-object-y="148.364" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 -0.02272725,0.2386363 2.181819,1.375 2.522725,1.386363 4.465906,0.375 4.454544,0.125</Path>
+        </PolygonCollider2D>
+      </GameObject>
       <GameObject name="RectangleObject" x="17.03125" y="-10.0625" rotation="0" layer="">
         <RectangleObjectComponent tmx-object-id="15" tmx-object-name="" tmx-object-type="" tmx-object-x="272.5" tmx-object-y="161" tmx-object-width="31.5" tmx-object-height="30.5" tmx-object-rotation="0" />
         <BoxCollider2D width="1.96875" height="1.90625" />
+      </GameObject>
+      <GameObject name="RectangleObject" x="11.5625" y="-10.78125" rotation="0" layer="">
+        <RectangleObjectComponent tmx-object-id="25" tmx-object-name="" tmx-object-type="" tmx-object-x="185" tmx-object-y="172.5" tmx-object-width="6.75" tmx-object-height="33.5" tmx-object-rotation="0" />
+        <BoxCollider2D width="0.421875" height="2.09375" />
+      </GameObject>
+      <GameObject name="PolygonObject" x="11.78975" y="-10.7840624" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="28" tmx-object-name="" tmx-object-type="" tmx-object-x="188.636" tmx-object-y="172.545" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>-2.079544,0.04545456 -0.7840937,0.5795456 0,0</Path>
+        </PolygonCollider2D>
       </GameObject>
       <GameObject name="RectangleObject" x="3" y="-11.03125" rotation="0" layer="">
         <RectangleObjectComponent tmx-object-id="24" tmx-object-name="" tmx-object-type="" tmx-object-x="48" tmx-object-y="176.5" tmx-object-width="32" tmx-object-height="31" tmx-object-rotation="0" />

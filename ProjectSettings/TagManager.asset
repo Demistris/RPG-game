@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Frontground
+  - name: Signs
+    uniqueID: 2160375821
+    locked: 0
+  - name: Player
     uniqueID: 2490563389
+    locked: 0
+  - name: UI
+    uniqueID: 1946219743
     locked: 0
