@@ -16,14 +16,26 @@ public class PlayerMovement : MonoBehaviour
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
-        if(_movement != Vector3.zero)
-        {
-            MovePlayer();
-        }
+        MovePlayer();
+        UpdateAnimation();
     }
 
     private void MovePlayer()
     {
         _rigidbody2D.MovePosition(transform.position + _movement * _moveSpeed * Time.deltaTime);
+    }
+
+    private void UpdateAnimation()
+    {
+        if (_movement != Vector3.zero)
+        {
+            _animator.SetFloat("Horizontal", _movement.x);
+            _animator.SetFloat("Vertical", _movement.y);
+            _animator.SetBool("Moving", true);
+        }
+        else
+        {
+            _animator.SetBool("Moving", false);
+        }
     }
 }
