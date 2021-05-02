@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator _animator;
 
-    private Vector2 _movement;
+    private Vector3 _movement;
 
     private void Update()
     {
+        _movement = Vector3.zero;
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
-        _animator.SetFloat("Horizontal", _movement.x);
-        _animator.SetFloat("Vertical", _movement.y);
-        _animator.SetFloat("Speed", _movement.sqrMagnitude);
+        if(_movement != Vector3.zero)
+        {
+            MovePlayer();
+        }
     }
 
-    private void FixedUpdate()
+    private void MovePlayer()
     {
-        _rigidbody2D.MovePosition(_rigidbody2D.position + _movement * _moveSpeed * Time.fixedDeltaTime);
+        _rigidbody2D.MovePosition(transform.position + _movement * _moveSpeed * Time.deltaTime);
     }
 }
