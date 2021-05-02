@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _currentState = PlayerState.Walk;
+        _animator.SetFloat("Horizontal", 0);
+        _animator.SetFloat("Vertical", -1);
     }
 
     private void Update()
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        _movement.Normalize();
         _rigidbody2D.MovePosition(transform.position + _movement * _moveSpeed * Time.deltaTime);
     }
 
