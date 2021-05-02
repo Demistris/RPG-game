@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1938956583038177470}
   m_Layer: 0
   m_Name: Log
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938956583038177464}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &1938956583038177471
@@ -167,7 +167,8 @@ MonoBehaviour:
   _name: Larry the Log
   _health: 2
   _baseAttack: 1
-  _moveSpeed: 2
+  _moveSpeed: 5
+  _rigidbody: {fileID: 1938956583038177468}
   _homePosition: {fileID: 0}
   _chaseRadius: 4
   _attackRadius: 1.5
