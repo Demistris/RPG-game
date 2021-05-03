@@ -18,6 +18,7 @@ namespace Tiled2Unity
 {
     // Handles a Mesh being imported.
     // At this point we should have everything we need to build out any prefabs for the tiled map object
+    [Obsolete]
     partial class ImportTiled2Unity
     {
         public void MeshImported(string objPath)

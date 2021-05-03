@@ -27,6 +27,7 @@ using UnityEngine;
 namespace Tiled2Unity
 {
     // Assets that are imported to "Tiled2Unity/..." will use this post processor
+    [Obsolete]
     public class TiledAssetPostProcessor : AssetPostprocessor
     {
         private static bool UseThisImporter(string assetPath)

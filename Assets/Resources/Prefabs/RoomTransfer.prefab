@@ -73,3 +73,7 @@ MonoBehaviour:
   _cameraChange: {x: 0, y: 0}
   _playerChange: {x: 0, y: 0, z: 0}
   _cameraMovement: {fileID: 0}
+  _needText: 0
+  _placeName: 
+  _textObject: {fileID: 0}
+  _placeNameText: {fileID: 0}

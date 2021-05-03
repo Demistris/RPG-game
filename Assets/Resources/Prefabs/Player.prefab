@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3190523678267220243}
   - component: {fileID: 6984102397727528444}
+  - component: {fileID: 6158825972311713258}
   m_Layer: 0
   m_Name: RightHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,6 +64,21 @@ PolygonCollider2D:
       - {x: 0.28531456, y: -0.7923889}
       - {x: 0.5951077, y: -0.8309896}
       - {x: 0.8338747, y: -0.67236143}
+--- !u!114 &6158825972311713258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161856729041306267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3810e78cfd80ec447ba576215e0e303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thrust: 2
+  _knockTime: 0.2
+  _damage: 1
 --- !u!1 &2530512658821363432
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5655284998668061547}
   - component: {fileID: 8858451632515524393}
+  - component: {fileID: 3511388239190515859}
   m_Layer: 0
   m_Name: DownHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +142,21 @@ PolygonCollider2D:
       - {x: 0.37810993, y: -1.062994}
       - {x: 0.37539637, y: -0.8383138}
       - {x: 0.3724804, y: -0.5332146}
+--- !u!114 &3511388239190515859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2530512658821363432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3810e78cfd80ec447ba576215e0e303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thrust: 2
+  _knockTime: 0.2
+  _damage: 1
 --- !u!1 &2694961246442400667
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,9 +169,9 @@ GameObject:
   - component: {fileID: 2694961246442400666}
   - component: {fileID: 2694961246442400356}
   - component: {fileID: 2694961246442400359}
+  - component: {fileID: 484650756054831711}
   - component: {fileID: 2694961246442400353}
   - component: {fileID: 2694961246442400358}
-  - component: {fileID: 1551839854101562482}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -263,6 +295,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4972924, y: 0.25530875}
   m_EdgeRadius: 0
+--- !u!61 &484650756054831711
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2694961246442400667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0022835732, y: -0.15071583}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.62092686, y: 0.93128777}
+  m_EdgeRadius: 0
 --- !u!95 &2694961246442400353
 Animator:
   serializedVersion: 3
@@ -294,24 +352,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b4f6b900c40af429531fd0d3d0ed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: 0
+  CurrentState: 0
   _moveSpeed: 30
-  _rigidbody2D: {fileID: 2694961246442400356}
+  _rigidbody: {fileID: 2694961246442400356}
   _animator: {fileID: 2694961246442400353}
---- !u!114 &1551839854101562482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2694961246442400667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3810e78cfd80ec447ba576215e0e303a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _thrust: 5
-  _knockTime: 0.4
+  _currentHealth: {fileID: 11400000, guid: e452fd1975c5c2b4ca0a748d6c9b6627, type: 2}
+  _playerHealthSignal: {fileID: 11400000, guid: 2caa6a44ef7cbf34ab628bb2de21701d,
+    type: 2}
 --- !u!1 &5661690036690058912
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,9 +369,10 @@ GameObject:
   m_Component:
   - component: {fileID: 235679891697388827}
   - component: {fileID: 4428673149522220467}
+  - component: {fileID: 2944188473536336734}
   m_Layer: 0
   m_Name: LeftHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,6 +424,21 @@ PolygonCollider2D:
       - {x: -0.4324131, y: -0.88759804}
       - {x: -0.7378143, y: -0.8676088}
       - {x: -1.0190334, y: -0.27687842}
+--- !u!114 &2944188473536336734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5661690036690058912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3810e78cfd80ec447ba576215e0e303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thrust: 2
+  _knockTime: 0.2
+  _damage: 1
 --- !u!1 &6531914224497393234
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,9 +449,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2572554663043817719}
   - component: {fileID: 7126912994052673019}
+  - component: {fileID: 4150884148221124733}
   m_Layer: 0
   m_Name: UpHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,3 +505,18 @@ PolygonCollider2D:
       - {x: 0.29996204, y: 0.45997047}
       - {x: -0.15923822, y: 0.5605223}
       - {x: -0.22806835, y: 0.5507049}
+--- !u!114 &4150884148221124733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531914224497393234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3810e78cfd80ec447ba576215e0e303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thrust: 2
+  _knockTime: 0.2
+  _damage: 1

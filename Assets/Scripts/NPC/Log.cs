@@ -4,6 +4,7 @@ public class Log : Enemy
 {
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Transform _homePosition;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float _chaseRadius;
     [SerializeField] private float _attackRadius;
 
@@ -12,10 +13,11 @@ public class Log : Enemy
 
     private void Start()
     {
+        CurrentState = EnemyState.Idle;
         _target = GameObject.FindWithTag("Player").transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_target != null)
         {
@@ -27,8 +29,58 @@ public class Log : Enemy
     {
         if(Vector3.Distance(_target.position, transform.position) <= _chaseRadius && Vector3.Distance(_target.position, transform.position) > _attackRadius)
         {
-            Vector3 temp = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
-            _rigidbody.MovePosition(temp);
+            if (CurrentState == EnemyState.Idle || CurrentState == EnemyState.Walk && CurrentState != EnemyState.Stagger)
+            {
+                Vector3 temp = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
+                UpdateAnimation(temp - transform.position);
+                _rigidbody.MovePosition(temp);
+                ChangeState(EnemyState.Walk);
+                _animator.SetBool("WakeUp", true);
+            }
+        }
+        else if(Vector3.Distance(_target.position, transform.position) > _chaseRadius)
+        {
+            _animator.SetBool("WakeUp", false);
+        }
+    }
+
+    private void UpdateAnimation(Vector2 direction)
+    {
+        if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if(direction.x > 0)
+            {
+                SetAnimationFloat(Vector2.right);
+            }
+            else
+            {
+                SetAnimationFloat(Vector2.left);
+            }
+        }
+        else if(Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+                SetAnimationFloat(Vector2.up);
+            }
+            else
+            {
+                SetAnimationFloat(Vector2.down);
+            }
+        }
+    }
+
+    private void SetAnimationFloat(Vector2 setVector)
+    {
+        _animator.SetFloat("Horizontal", setVector.x);
+        _animator.SetFloat("Vertical", setVector.y);
+    }
+
+    private void ChangeState(EnemyState newState)
+    {
+        if(CurrentState != newState)
+        {
+            CurrentState = newState;
         }
     }
 }

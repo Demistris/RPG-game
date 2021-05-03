@@ -1,32 +1,47 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
     [SerializeField] private float _thrust;
     [SerializeField] private float _knockTime;
+    [SerializeField] private float _damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        //Fix this - pot is destroyed when enemy knockback
+        if (collision.CompareTag("Breakable") && this.CompareTag("Player"))
         {
-            Rigidbody2D enemy = collision.GetComponent<Rigidbody2D>();
-            if(enemy != null)
-            {
-                Vector2 difference = enemy.transform.position - transform.position;
-                difference = difference.normalized * _thrust;
-                enemy.AddForce(difference, ForceMode2D.Impulse);
-                StartCoroutine(KnockCoroutine(enemy));
-            }
+            collision.GetComponent<ObjectBreaker>().BreakObject();
         }
-    }
 
-    private IEnumerator KnockCoroutine(Rigidbody2D enemy)
-    {
-        if(enemy != null)
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
         {
-            yield return new WaitForSeconds(_knockTime);
-            enemy.velocity = Vector2.zero;
+            Rigidbody2D hitRB = collision.GetComponent<Rigidbody2D>();
+
+            if(hitRB != null)
+            {
+                Vector2 difference = hitRB.transform.position - transform.position;
+                difference = difference.normalized * _thrust;
+                hitRB.AddForce(difference, ForceMode2D.Impulse);
+
+                if (collision.CompareTag("Enemy") && collision.isTrigger)
+                {
+                    Enemy enemy = collision.GetComponent<Enemy>();
+                    enemy.CurrentState = EnemyState.Stagger;
+                    enemy.Knock(hitRB, _knockTime, _damage);
+                }
+
+                if(collision.CompareTag("Player"))
+                {
+                    Player player = collision.GetComponent<Player>();
+
+                    if (player.CurrentState != PlayerState.Stagger)
+                    {
+                        player.CurrentState = PlayerState.Stagger;
+                        player.Knock(_knockTime, _damage);
+                    }
+                }
+            }
         }
     }
 }
