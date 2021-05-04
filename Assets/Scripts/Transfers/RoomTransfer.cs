@@ -13,9 +13,10 @@ public class RoomTransfer : MonoBehaviour
     [SerializeField] private GameObject _textObject;
     [SerializeField] private TextMeshProUGUI _placeNameText;
 
+    //Add cam boundries for big map
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && !collision.isTrigger)
         {
             _cameraMovement.MinPosition += _cameraChange;
             _cameraMovement.MaxPosition += _cameraChange;

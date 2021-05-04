@@ -3,11 +3,14 @@ using TMPro;
 
 public class Sign : MonoBehaviour
 {
+    [SerializeField] private Signal _contextOn;
+    [SerializeField] private Signal _contextOff;
     [SerializeField] private GameObject _dialogBox;
     [SerializeField] private TextMeshProUGUI _dialogText;
     [SerializeField] private string _dialog;
     private bool _playerInRange;
 
+    //Fix display dialog
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && _playerInRange)
@@ -28,6 +31,7 @@ public class Sign : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            _contextOn.Raise();
             _playerInRange = true;
         }
     }
@@ -36,6 +40,7 @@ public class Sign : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            _contextOff.Raise();
             _playerInRange = false;
             _dialogBox.SetActive(false);
         }

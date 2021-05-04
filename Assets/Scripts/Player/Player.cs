@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private FloatValue _currentHealth;
     [SerializeField] private Signal _playerHealthSignal;
+    [SerializeField] private VectorValue _startingPosition;
 
     private Vector3 _movement;
 
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         CurrentState = PlayerState.Walk;
         _animator.SetFloat("Horizontal", 0);
         _animator.SetFloat("Vertical", -1);
+        transform.position = _startingPosition.InitialValue;
     }
 
     private void Update()

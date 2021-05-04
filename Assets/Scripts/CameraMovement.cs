@@ -8,6 +8,12 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private float _smoothing;
 
+    //When fade is over cam shoud be with player
+    //private void Start()
+    //{
+    //    transform.position = new Vector3(_target.position.x, _target.position.y, transform.position.z);
+    //}
+
     private void LateUpdate()
     {
         if(transform.position != _target.position)
