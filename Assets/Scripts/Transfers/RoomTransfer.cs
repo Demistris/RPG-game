@@ -4,7 +4,9 @@ using System.Collections;
 
 public class RoomTransfer : MonoBehaviour
 {
-    [SerializeField] private Vector2 _cameraChange;
+    [SerializeField] private Vector2 _cameraMinChange;
+    [SerializeField] private Vector2 _cameraMaxChange;
+
     [SerializeField] private Vector3 _playerChange;
     [SerializeField] private CameraMovement _cameraMovement;
 
@@ -13,13 +15,12 @@ public class RoomTransfer : MonoBehaviour
     [SerializeField] private GameObject _textObject;
     [SerializeField] private TextMeshProUGUI _placeNameText;
 
-    //Add cam boundries for big map
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _cameraMovement.MinPosition += _cameraChange;
-            _cameraMovement.MaxPosition += _cameraChange;
+            _cameraMovement.MinPosition += _cameraMinChange;
+            _cameraMovement.MaxPosition += _cameraMaxChange;
 
             collision.transform.position += _playerChange;
 

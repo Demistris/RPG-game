@@ -4,13 +4,11 @@ public class ContextClue : MonoBehaviour
 {
     [SerializeField] private GameObject _contextClue;
 
-    public void Enable()
-    {
-        _contextClue.SetActive(true);
-    }
+    private bool _contextActive;
 
-    public void Disable()
+    public void ChangeContext()
     {
-        _contextClue.SetActive(false);
+        _contextActive = !_contextActive;
+        _contextClue.SetActive(_contextActive);
     }
 }

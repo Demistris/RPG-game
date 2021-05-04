@@ -149,8 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522def3fdc3960942b21b310d7bd288e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _contextOn: {fileID: 11400000, guid: 1f9ce3896ab337a45a47cda50e0f8314, type: 2}
-  _contextOff: {fileID: 11400000, guid: 158e0a8c7d5bc074a9783198f1a8d0be, type: 2}
+  _context: {fileID: 11400000, guid: 1f9ce3896ab337a45a47cda50e0f8314, type: 2}
   _dialogBox: {fileID: 0}
   _dialogText: {fileID: 0}
   _dialog: 

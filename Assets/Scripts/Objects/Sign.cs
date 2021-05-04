@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class Sign : MonoBehaviour
+public class Sign : Interactable
 {
-    [SerializeField] private Signal _contextOn;
-    [SerializeField] private Signal _contextOff;
     [SerializeField] private GameObject _dialogBox;
     [SerializeField] private TextMeshProUGUI _dialogText;
     [SerializeField] private string _dialog;
-    private bool _playerInRange;
 
-    //Fix display dialog
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && _playerInRange)
@@ -27,20 +23,12 @@ public class Sign : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //Dry
+    private new void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _contextOn.Raise();
-            _playerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            _contextOff.Raise();
+            _context.Raise();
             _playerInRange = false;
             _dialogBox.SetActive(false);
         }
