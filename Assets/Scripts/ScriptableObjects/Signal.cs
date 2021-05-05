@@ -4,23 +4,23 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Signal : ScriptableObject
 {
-    public List<SignalListener> Listeners = new List<SignalListener>();
+    private List<SignalListener> _listeners = new List<SignalListener>();
 
     public void Raise()
     {
-        for (int i = Listeners.Count - 1; i >= 0; i--)
+        for (int i = _listeners.Count - 1; i >= 0; i--)
         {
-            Listeners[i].OnSignalRaised();
+            _listeners[i].OnSignalRaised();
         }
     }
 
     public void RegisterListener(SignalListener signalListener)
     {
-        Listeners.Add(signalListener);
+        _listeners.Add(signalListener);
     }
 
     public void DeRegisterListener(SignalListener signalListener)
     {
-        Listeners.Remove(signalListener);
+        _listeners.Remove(signalListener);
     }
 }

@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Signal _playerHealthSignal;
     [SerializeField] private VectorValue _startingPosition;
 
+    [SerializeField] private Inventory _playerInventory;
+    [SerializeField] private SpriteRenderer _receivedItemSprite;
+
     private Vector3 _movement;
 
     private void Start()
@@ -32,6 +35,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(CurrentState == PlayerState.Interact)
+        {
+            return;
+        }
+
         _movement = Vector3.zero;
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
@@ -54,7 +62,31 @@ public class Player : MonoBehaviour
         yield return null;
         _animator.SetBool("Attacking", false);
         yield return new WaitForSeconds(.3f);
-        CurrentState = PlayerState.Walk;
+
+        if (CurrentState != PlayerState.Interact)
+        {
+            CurrentState = PlayerState.Walk;
+        }
+    }
+
+    public void RaiseItem()
+    {
+        if (_playerInventory.CurrentItem != null)
+        {
+            if (CurrentState != PlayerState.Interact)
+            {
+                _animator.SetBool("ReceivedItem", true);
+                CurrentState = PlayerState.Interact;
+                _receivedItemSprite.sprite = _playerInventory.CurrentItem.ItemSprite;
+            }
+            else
+            {
+                _animator.SetBool("ReceivedItem", false);
+                CurrentState = PlayerState.Idle;
+                _receivedItemSprite.sprite = null;
+                _playerInventory.CurrentItem = null;
+            }
+        }
     }
 
     private void MovePlayer()
