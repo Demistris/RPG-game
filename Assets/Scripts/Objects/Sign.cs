@@ -9,7 +9,7 @@ public class Sign : Interactable
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && _playerInRange)
+        if(Input.GetKeyDown(KeyCode.E) && _playerInRange)
         {
             if(_dialogBox.activeInHierarchy)
             {

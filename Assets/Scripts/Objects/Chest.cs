@@ -13,7 +13,7 @@ public class Chest : Interactable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && _playerInRange)
         {
             if(!_isOpen)
             {
@@ -44,6 +44,7 @@ public class Chest : Interactable
         _raiseItem.Raise();
     }
 
+    //Dry1
     protected new void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger && !_isOpen)
@@ -53,6 +54,7 @@ public class Chest : Interactable
         }
     }
 
+    //Dry2
     protected new void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger && !_isOpen)

@@ -2,19 +2,19 @@
 
 public class Log : Enemy
 {
-    [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Transform _homePosition;
-    [SerializeField] private Animator _animator;
-    [SerializeField] private float _chaseRadius;
-    [SerializeField] private float _attackRadius;
+    [SerializeField] protected Rigidbody2D _rigidbody;
+    [SerializeField] protected Animator _animator;
+    [SerializeField] protected float _chaseRadius;
+    [SerializeField] protected float _attackRadius;
 
-    private Transform _target;
-    
+    protected Transform _target;
 
     private void Start()
     {
         CurrentState = EnemyState.Idle;
         _target = GameObject.FindWithTag("Player").transform;
+        _animator.SetBool("WakeUp", true);
     }
 
     private void FixedUpdate()
@@ -25,7 +25,7 @@ public class Log : Enemy
         }
     }
 
-    private void CheckDistance()
+    protected virtual void CheckDistance()
     {
         if(Vector3.Distance(_target.position, transform.position) <= _chaseRadius && Vector3.Distance(_target.position, transform.position) > _attackRadius)
         {
@@ -44,7 +44,7 @@ public class Log : Enemy
         }
     }
 
-    private void UpdateAnimation(Vector2 direction)
+    protected void UpdateAnimation(Vector2 direction)
     {
         if(Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {

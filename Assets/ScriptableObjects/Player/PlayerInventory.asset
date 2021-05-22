@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   CurrentItem: {fileID: 0}
+  _numberOfKeys: 98
   _items: []
-  _numberOfKeys: 0

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public Item CurrentItem;
+    public int _numberOfKeys;
     [SerializeField] private List<Item> _items = new List<Item>();
-    [SerializeField] private int _numberOfKeys;
 
     public void AddItem(Item itemToAdd)
     {
