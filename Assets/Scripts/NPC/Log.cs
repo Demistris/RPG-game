@@ -2,7 +2,7 @@
 
 public class Log : Enemy
 {
-    [SerializeField] private Transform _homePosition;
+    //[SerializeField] private Transform _homePosition;
 
     [SerializeField] protected Rigidbody2D _rigidbody;
     [SerializeField] protected Animator _animator;
@@ -82,7 +82,7 @@ public class Log : Enemy
         _animator.SetFloat("Vertical", setVector.y);
     }
 
-    private void ChangeState(EnemyState newState)
+    protected void ChangeState(EnemyState newState)
     {
         if(CurrentState != newState)
         {

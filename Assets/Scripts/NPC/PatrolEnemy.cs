@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-public class PatrolLog : Log
+public class PatrolEnemy : Log
 {
     [SerializeField] private Vector2[] _path;
-    [SerializeField] private Vector2 _currentGoal;
-    [SerializeField] private int _currentPoint;
     [SerializeField] private float _roundingDistance;
+    private int _currentPoint;
 
     protected override void CheckDistance()
     {
@@ -36,12 +35,10 @@ public class PatrolLog : Log
         if(_currentPoint == _path.Length - 1)
         {
             _currentPoint = 0;
-            _currentGoal = _path[0];
         }
         else
         {
             _currentPoint++;
-            _currentGoal = _path[_currentPoint];
         }
     }
 }
