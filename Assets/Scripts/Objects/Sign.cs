@@ -5,7 +5,7 @@ public class Sign : Interactable
 {
     [SerializeField] private GameObject _dialogBox;
     [SerializeField] private TextMeshProUGUI _dialogText;
-    [SerializeField] private string _dialog;
+    [SerializeField] public string _dialog;
 
     private void Update()
     {
