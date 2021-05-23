@@ -223,6 +223,11 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 1538829752}
+    - target: {fileID: 5292585813024059125, guid: 5508337849a88b14fae3d491062cabf0,
+        type: 3}
+      propertyPath: MinPosition.y
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5508337849a88b14fae3d491062cabf0, type: 3}
 --- !u!1 &107656176
@@ -707,12 +712,12 @@ PrefabInstance:
     - target: {fileID: 4370290281823353726, guid: f69af26b7de23204b963e137da14ad5a,
         type: 3}
       propertyPath: _cameraMaxChange.x
-      value: -25
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4370290281823353726, guid: f69af26b7de23204b963e137da14ad5a,
         type: 3}
       propertyPath: _cameraMaxChange.y
-      value: -11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370290281823353726, guid: f69af26b7de23204b963e137da14ad5a,
         type: 3}
@@ -1685,7 +1690,7 @@ PrefabInstance:
     - target: {fileID: 1853056834800543381, guid: 29d12be1596c44d498adc86665646742,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24
+      value: -16.21
       objectReference: {fileID: 0}
     - target: {fileID: 1853056834800543381, guid: 29d12be1596c44d498adc86665646742,
         type: 3}

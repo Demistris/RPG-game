@@ -198,6 +198,8 @@ MonoBehaviour:
   _health: 0
   _baseAttack: 1
   _moveSpeed: 3
+  _deathEffectPrefab: {fileID: 2223158592704806693, guid: 779dd78958eeab544b0a90dc151f4492,
+    type: 3}
   _homePosition: {fileID: 0}
   _rigidbody: {fileID: 3413488518004839178}
   _animator: {fileID: 3413488518004839179}

@@ -198,8 +198,10 @@ MonoBehaviour:
   _health: 2
   _baseAttack: 1
   _moveSpeed: 1.5
-  _rigidbody: {fileID: 1938956583038177468}
+  _deathEffectPrefab: {fileID: 2223158592704806693, guid: 779dd78958eeab544b0a90dc151f4492,
+    type: 3}
   _homePosition: {fileID: 0}
+  _rigidbody: {fileID: 1938956583038177468}
   _animator: {fileID: 1938956583038177469}
   _chaseRadius: 4
   _attackRadius: 1.2

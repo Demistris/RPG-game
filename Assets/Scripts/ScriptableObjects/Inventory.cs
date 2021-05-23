@@ -5,14 +5,15 @@ using UnityEngine;
 public class Inventory : ScriptableObject
 {
     public Item CurrentItem;
-    public int _numberOfKeys;
+    public int NumberOfKeys;
+    public int Coins;
     [SerializeField] private List<Item> _items = new List<Item>();
 
     public void AddItem(Item itemToAdd)
     {
         if(itemToAdd.IsKey)
         {
-            _numberOfKeys++;
+            NumberOfKeys++;
         }
         else
         {

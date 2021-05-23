@@ -23,9 +23,9 @@ public class Door : Interactable
         {
             if(_playerInRange && _thisDoorType == DoorType.Key)
             {
-                if(_playerInventory._numberOfKeys > 0)
+                if(_playerInventory.NumberOfKeys > 0)
                 {
-                    _playerInventory._numberOfKeys--;
+                    _playerInventory.NumberOfKeys--;
                     SetDoorOpen(true);
                 }
             }

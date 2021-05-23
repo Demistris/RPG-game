@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _health;
     [SerializeField] protected int _baseAttack;
     [SerializeField] protected float _moveSpeed;
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     private void Awake()
     {
@@ -34,8 +35,18 @@ public class Enemy : MonoBehaviour
         _health -= damage;
         if(_health <= 0)
         {
+            DeathEffect();
             gameObject.SetActive(false);
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 1.5f);
+        }
+    }
+
+    private void DeathEffect()
+    {
+        if(_deathEffectPrefab != null)
+        {
+            GameObject deathEffect = Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(deathEffect, 1f);
         }
     }
 
