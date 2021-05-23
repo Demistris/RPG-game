@@ -172,8 +172,9 @@ MonoBehaviour:
   _context: {fileID: 11400000, guid: 1f9ce3896ab337a45a47cda50e0f8314, type: 2}
   _contents: {fileID: 11400000, guid: 702d7dbccfad9ec46b85b7ed68c7f8cf, type: 2}
   _playerInventory: {fileID: 11400000, guid: 9069b30bee61f6640afa0eb83e290d3e, type: 2}
-  _isOpen: 0
   _raiseItem: {fileID: 11400000, guid: 59feb7ddf5e8d6340a20e69ecc36a3f4, type: 2}
   _dialogBox: {fileID: 0}
   _dialogText: {fileID: 0}
   _animator: {fileID: 2890124445970780955}
+  _storedOpen: {fileID: 11400000, guid: e4129baa7dd35ec4c838cf0397e82674, type: 2}
+  _isOpen: 0

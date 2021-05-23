@@ -9,7 +9,18 @@ public class Chest : Interactable
     [SerializeField] private GameObject _dialogBox;
     [SerializeField] private TextMeshProUGUI _dialogText;
     [SerializeField] private Animator _animator;
+    [SerializeField] private BoolValue _storedOpen;
     [SerializeField] private bool _isOpen;
+
+    private void Start()
+    {
+        _isOpen = _storedOpen.RuntimeValue;
+
+        if(_isOpen)
+        {
+            _animator.SetBool("ChestOpened", true);
+        }
+    }
 
     private void Update()
     {
@@ -36,6 +47,7 @@ public class Chest : Interactable
         _raiseItem.Raise();
         _context.Raise();
         _isOpen = true;
+        _storedOpen.RuntimeValue = _isOpen;
     }
 
     private void ChestAlreadyOpened()

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e56fd2518e848148b0336512ab32065, type: 3}
   m_Name: HouseCameraMax
   m_EditorClassIdentifier: 
-  InitialValue: {x: 0, y: 0}
-  DefaultValue: {x: 0, y: 0}
+  InitialValue: {x: 8, y: -6}
+  DefaultValue: {x: 8, y: -6}

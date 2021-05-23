@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
-public class FloatValue : ScriptableObject, ISerializationCallbackReceiver
+public class BoolValue : ScriptableObject, ISerializationCallbackReceiver
 {
-    public float InitialValue;
+    public bool InitialValue;
     [HideInInspector]
-    public float RuntimeValue;
+    public bool RuntimeValue;
 
     public void OnBeforeSerialize()
     {
