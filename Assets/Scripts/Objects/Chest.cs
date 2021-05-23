@@ -5,11 +5,11 @@ public class Chest : Interactable
 {
     [SerializeField] private Item _contents;
     [SerializeField] private Inventory _playerInventory;
-    [SerializeField] private bool _isOpen;
     [SerializeField] private Signal _raiseItem;
     [SerializeField] private GameObject _dialogBox;
     [SerializeField] private TextMeshProUGUI _dialogText;
     [SerializeField] private Animator _animator;
+    [SerializeField] private bool _isOpen;
 
     private void Update()
     {
@@ -44,23 +44,19 @@ public class Chest : Interactable
         _raiseItem.Raise();
     }
 
-    //Dry1
     protected new void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger && !_isOpen)
         {
-            _context.Raise();
-            _playerInRange = true;
+            InRange(true);
         }
     }
 
-    //Dry2
     protected new void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger && !_isOpen)
         {
-            _context.Raise();
-            _playerInRange = false;
+            InRange(false);
         }
     }
 }

@@ -338,10 +338,42 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
         type: 3}
+      propertyPath: _cameraMax
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d9088fcef07106478419b043eeeee31,
+        type: 2}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
+      propertyPath: _cameraMin
+      value: 
+      objectReference: {fileID: 11400000, guid: f915a4e12e7ba5045abb7266cd75617b,
+        type: 2}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
       propertyPath: _fadingPanel
       value: 
       objectReference: {fileID: 5315641121559555928, guid: 096261d8e96c11f4a9f749ab1731e301,
         type: 3}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
+      propertyPath: _cameraNewMax.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
+      propertyPath: _cameraNewMax.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
+      propertyPath: _cameraNewMin.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
+        type: 3}
+      propertyPath: _cameraNewMin.y
+      value: -19
+      objectReference: {fileID: 0}
     - target: {fileID: 437943268612543912, guid: 29d12be1596c44d498adc86665646742,
         type: 3}
       propertyPath: _playerPosition.x
@@ -355,7 +387,7 @@ PrefabInstance:
     - target: {fileID: 1853056834800543378, guid: 29d12be1596c44d498adc86665646742,
         type: 3}
       propertyPath: m_Name
-      value: SceneTransition
+      value: StartMapTransition
       objectReference: {fileID: 0}
     - target: {fileID: 1853056834800543381, guid: 29d12be1596c44d498adc86665646742,
         type: 3}

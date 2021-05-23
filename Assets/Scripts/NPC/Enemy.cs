@@ -12,12 +12,15 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState CurrentState;
+
     [SerializeField] protected FloatValue _maxHealth;
     [SerializeField] protected string _name;
     [SerializeField] protected float _health;
     [SerializeField] protected int _baseAttack;
     [SerializeField] protected float _moveSpeed;
+
     [SerializeField] private GameObject _deathEffectPrefab;
+    private float _timeToDestroy = 1f;
 
     private void Awake()
     {
@@ -37,7 +40,7 @@ public class Enemy : MonoBehaviour
         {
             DeathEffect();
             gameObject.SetActive(false);
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, _timeToDestroy);
         }
     }
 
@@ -46,7 +49,7 @@ public class Enemy : MonoBehaviour
         if(_deathEffectPrefab != null)
         {
             GameObject deathEffect = Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(deathEffect, 1f);
+            Destroy(deathEffect, _timeToDestroy);
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -6,13 +7,18 @@ public class CameraMovement : MonoBehaviour
     public Vector2 MinPosition;
 
     [SerializeField] private Transform _target;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private VectorValue _cameraMin;
+    [SerializeField] private VectorValue _cameraMax;
     [SerializeField] private float _smoothing;
 
-    //When fade is over cam shoud be with player
-    //private void Start()
-    //{
-    //    transform.position = new Vector3(_target.position.x, _target.position.y, transform.position.z);
-    //}
+    private void Start()
+    {
+        MaxPosition = _cameraMax.InitialValue;
+        MinPosition = _cameraMin.InitialValue;
+
+        transform.position = new Vector3(_target.position.x, _target.position.y, transform.position.z);
+    }
 
     private void LateUpdate()
     {
@@ -25,5 +31,17 @@ public class CameraMovement : MonoBehaviour
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, _smoothing);
         }
+    }
+
+    public void BeginKick()
+    {
+        _animator.SetBool("ScreenKick", true);
+        StartCoroutine(KickCoroutine());
+    }
+
+    private IEnumerator KickCoroutine()
+    {
+        yield return null;
+        _animator.SetBool("ScreenKick", false);
     }
 }

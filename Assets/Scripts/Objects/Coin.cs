@@ -13,7 +13,7 @@ public class Coin : PowerUp
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _playerInventory.Coins += 10;
+            _playerInventory.Coins += (int)_amountToIncrease;
             CollectedPowerUp();
         }
     }

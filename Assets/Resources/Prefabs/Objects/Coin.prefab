@@ -143,4 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _powerUpSignal: {fileID: 11400000, guid: b3618c366c545224fb68bac1045916a2, type: 2}
+  _amountToIncrease: 10
   _playerInventory: {fileID: 11400000, guid: 9069b30bee61f6640afa0eb83e290d3e, type: 2}

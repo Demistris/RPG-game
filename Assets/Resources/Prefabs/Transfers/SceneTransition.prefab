@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72040287beff4344fb4f2d38790af91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoad: StartMap
   _playerPosition: {x: 0, y: 0}
   _playerPositionStorage: {fileID: 11400000, guid: ed7be4f4c5a62a644afd1e4346ecc6aa,
     type: 2}
@@ -78,4 +77,5 @@ MonoBehaviour:
     type: 3}
   _fadeInPanel: {fileID: 5315641121559555928, guid: 096261d8e96c11f4a9f749ab1731e301,
     type: 3}
+  _sceneToLoad: StartMap
   _fadeWait: 0.3

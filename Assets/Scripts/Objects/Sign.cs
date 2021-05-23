@@ -13,24 +13,27 @@ public class Sign : Interactable
         {
             if(_dialogBox.activeInHierarchy)
             {
-                _dialogBox.SetActive(false);
+                DialogBoxActivity(false);
             }
             else
             {
-                _dialogBox.SetActive(true);
+                DialogBoxActivity(true);
                 _dialogText.text = _dialog;
             }
         }
     }
 
-    //Dry
     private new void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _context.Raise();
-            _playerInRange = false;
-            _dialogBox.SetActive(false);
+            InRange(false);
+            DialogBoxActivity(false);
         }
+    }
+
+    private void DialogBoxActivity(bool openDialog)
+    {
+        _dialogBox.SetActive(openDialog);
     }
 }

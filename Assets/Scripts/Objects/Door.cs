@@ -9,13 +9,11 @@ public enum DoorType
 
 public class Door : Interactable
 {
-    [Header("Door variables")]
     [SerializeField] private DoorType _thisDoorType;
-    [SerializeField] private bool _isOpen;
     [SerializeField] private Inventory _playerInventory;
-
     [SerializeField] private GameObject _openedDoor;
     [SerializeField] private GameObject _closedDoor;
+    [SerializeField] private bool _isOpen;
 
     private void Update()
     {

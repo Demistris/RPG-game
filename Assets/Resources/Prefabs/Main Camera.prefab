@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5292585813024059124}
   - component: {fileID: 5292585813024059123}
   - component: {fileID: 5292585813024059122}
+  - component: {fileID: 4556121611720206164}
   - component: {fileID: 5292585813024059125}
+  - component: {fileID: 4385420947017031469}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,6 +86,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5292585813024059121}
   m_Enabled: 1
+--- !u!95 &4556121611720206164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292585813024059121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9375712291e223b4a98d30a97f3ddb37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5292585813024059125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,4 +120,34 @@ MonoBehaviour:
   MaxPosition: {x: 17, y: -6}
   MinPosition: {x: 8, y: -19}
   _target: {fileID: 0}
+  _animator: {fileID: 4556121611720206164}
+  _cameraMin: {fileID: 11400000, guid: 5e9003ce3d25e0b46b77e6f6d14a1b49, type: 2}
+  _cameraMax: {fileID: 11400000, guid: 1990f40c451788140814e2a314601294, type: 2}
   _smoothing: 0.05
+--- !u!114 &4385420947017031469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292585813024059121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c583b5a1b1e4e704b8eb6d3fcf225b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _signal: {fileID: 11400000, guid: b6cdb5f27b814044f9c1c5597ba324ea, type: 2}
+  _signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5292585813024059125}
+        m_MethodName: BeginKick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

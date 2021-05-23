@@ -3,7 +3,7 @@
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
-    public string ItemDescription;
     public Sprite ItemSprite;
+    public string ItemDescription;
     public bool IsKey;
 }

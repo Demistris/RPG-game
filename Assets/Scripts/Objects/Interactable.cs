@@ -9,8 +9,7 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _context.Raise();
-            _playerInRange = true;
+            InRange(true);
         }
     }
 
@@ -18,8 +17,13 @@ public class Interactable : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
-            _context.Raise();
-            _playerInRange = false;
+            InRange(false);
         }
+    }
+
+    protected void InRange(bool isInRange)
+    {
+        _context.Raise();
+        _playerInRange = isInRange;
     }
 }

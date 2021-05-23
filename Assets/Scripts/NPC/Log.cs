@@ -3,6 +3,7 @@
 public class Log : Enemy
 {
     [SerializeField] private Transform _homePosition;
+
     [SerializeField] protected Rigidbody2D _rigidbody;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected float _chaseRadius;
@@ -31,17 +32,22 @@ public class Log : Enemy
         {
             if (CurrentState == EnemyState.Idle || CurrentState == EnemyState.Walk && CurrentState != EnemyState.Stagger)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
-                UpdateAnimation(temp - transform.position);
-                _rigidbody.MovePosition(temp);
+                GoToTarget();
                 ChangeState(EnemyState.Walk);
-                _animator.SetBool("WakeUp", true);
             }
         }
         else if(Vector3.Distance(_target.position, transform.position) > _chaseRadius)
         {
             _animator.SetBool("WakeUp", false);
         }
+    }
+
+    protected void GoToTarget()
+    {
+        Vector3 temp = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
+        UpdateAnimation(temp - transform.position);
+        _rigidbody.MovePosition(temp);
+        _animator.SetBool("WakeUp", true);
     }
 
     protected void UpdateAnimation(Vector2 direction)

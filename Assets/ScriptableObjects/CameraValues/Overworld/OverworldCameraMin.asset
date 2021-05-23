@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5b842d904297143ad4d7e15380bbe6, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: 7e56fd2518e848148b0336512ab32065, type: 3}
+  m_Name: OverworldCameraMin
   m_EditorClassIdentifier: 
-  CurrentItem: {fileID: 0}
-  NumberOfKeys: 99
-  Coins: 10
-  _items: []
+  InitialValue: {x: 8, y: -19}
+  DefaultValue: {x: 8, y: -19}

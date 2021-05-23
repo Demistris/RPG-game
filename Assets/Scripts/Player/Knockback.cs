@@ -8,7 +8,6 @@ public class Knockback : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Fix this - pot is destroyed when enemy knockback
         if (collision.CompareTag("Breakable") && this.CompareTag("Player"))
         {
             collision.GetComponent<ObjectBreaker>().BreakObject();

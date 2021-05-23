@@ -13,10 +13,7 @@ public class PatrolLog : Log
         {
             if (CurrentState == EnemyState.Idle || CurrentState == EnemyState.Walk && CurrentState != EnemyState.Stagger)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
-                UpdateAnimation(temp - transform.position);
-                _rigidbody.MovePosition(temp);
-                _animator.SetBool("WakeUp", true);
+                GoToTarget();
             }
         }
         else if (Vector3.Distance(_target.position, transform.position) > _chaseRadius)

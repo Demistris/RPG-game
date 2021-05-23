@@ -13,15 +13,17 @@ public enum PlayerState
 public class Player : MonoBehaviour
 {
     public PlayerState CurrentState;
-    [SerializeField] private float _moveSpeed;
+
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Animator _animator;
     [SerializeField] private FloatValue _currentHealth;
     [SerializeField] private Signal _playerHealthSignal;
     [SerializeField] private VectorValue _startingPosition;
-
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private SpriteRenderer _receivedItemSprite;
+    [SerializeField] private Signal _playerHit;
+
+    [SerializeField] private float _moveSpeed;
 
     private Vector3 _movement;
 
@@ -126,6 +128,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator KnockCoroutine(float knockTime)
     {
+        _playerHit.Raise();
+
         if (_rigidbody != null)
         {
             yield return new WaitForSeconds(knockTime);

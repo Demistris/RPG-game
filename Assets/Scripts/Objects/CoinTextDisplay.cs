@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class CoinTextManager : MonoBehaviour
+public class CoinTextDisplay : MonoBehaviour
 {
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private TextMeshProUGUI _coinText;

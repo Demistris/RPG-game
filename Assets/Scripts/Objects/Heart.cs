@@ -4,7 +4,6 @@ public class Heart : PowerUp
 {
     [SerializeField] private FloatValue _playerHealth;
     [SerializeField] private FloatValue _heartContainers;
-    [SerializeField] private float _amountToIncrease;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

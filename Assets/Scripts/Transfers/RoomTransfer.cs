@@ -6,14 +6,13 @@ public class RoomTransfer : MonoBehaviour
 {
     [SerializeField] private Vector2 _cameraMinChange;
     [SerializeField] private Vector2 _cameraMaxChange;
-
     [SerializeField] private Vector3 _playerChange;
     [SerializeField] private CameraMovement _cameraMovement;
+    [SerializeField] private GameObject _textObject;
+    [SerializeField] private TextMeshProUGUI _placeNameText;
 
     [SerializeField] private bool _needText;
     [SerializeField] private string _placeName;
-    [SerializeField] private GameObject _textObject;
-    [SerializeField] private TextMeshProUGUI _placeNameText;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
