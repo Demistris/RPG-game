@@ -2,8 +2,6 @@
 
 public class Log : Enemy
 {
-    //[SerializeField] private Transform _homePosition;
-
     [SerializeField] protected Rigidbody2D _rigidbody;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected float _chaseRadius;

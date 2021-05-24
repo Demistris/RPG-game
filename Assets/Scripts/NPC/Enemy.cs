@@ -20,11 +20,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed;
 
     [SerializeField] private GameObject _deathEffectPrefab;
+
+    private Vector2 _homePosition;
     private float _timeToDestroy = 1f;
 
     private void Awake()
     {
         _health = _maxHealth.InitialValue;
+        _homePosition = transform.position;
+    }
+
+    private void OnEnable()
+    {
+        transform.position = _homePosition;
     }
 
     public void Knock(Rigidbody2D rigidbody, float knockTime, float damage)

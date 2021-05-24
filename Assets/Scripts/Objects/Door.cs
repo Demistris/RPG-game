@@ -11,6 +11,7 @@ public class Door : Interactable
 {
     [SerializeField] private DoorType _thisDoorType;
     [SerializeField] private Inventory _playerInventory;
+    [SerializeField] private Room _room;
     [SerializeField] private GameObject _openedDoor;
     [SerializeField] private GameObject _closedDoor;
     [SerializeField] private bool _isOpen;
@@ -19,18 +20,36 @@ public class Door : Interactable
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(_playerInRange && _thisDoorType == DoorType.Key)
+            if(_playerInRange)
             {
-                if(_playerInventory.NumberOfKeys > 0)
+                if (_thisDoorType == DoorType.Key)
                 {
-                    _playerInventory.NumberOfKeys--;
-                    SetDoorOpen(true);
+                    if (_playerInventory.NumberOfKeys > 0)
+                    {
+                        _playerInventory.NumberOfKeys--;
+                        SetDoorOpen(true);
+                    }
+                }
+                else if (_thisDoorType == DoorType.Enemy)
+                {
+                    if(_room._enemies.Length > 0)
+                    {
+                        SetDoorOpen(false);
+                    }
+                    else
+                    {
+                        SetDoorOpen(true);
+                    }
+                }
+                else if(_thisDoorType == DoorType.Button)
+                {
+                    Debug.Log("Button doors - not finished");
                 }
             }
         }
     }
 
-    private void SetDoorOpen(bool openDoor)
+    public void SetDoorOpen(bool openDoor)
     {
         _openedDoor.SetActive(openDoor);
         _closedDoor.SetActive(!openDoor);
