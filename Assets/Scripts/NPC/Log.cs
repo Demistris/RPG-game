@@ -11,7 +11,7 @@ public class Log : Enemy
 
     protected Transform _target;
 
-    private void Start()
+    protected virtual void Start()
     {
         CurrentState = EnemyState.Idle;
         _target = GameObject.FindWithTag("Player").transform;
