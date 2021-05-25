@@ -32,7 +32,7 @@ public class Door : Interactable
                 }
                 else if (_thisDoorType == DoorType.Enemy)
                 {
-                    if(_room._enemies.Length > 0)
+                    if(_room.Enemies.Count > 0)
                     {
                         SetDoorOpen(false);
                     }
