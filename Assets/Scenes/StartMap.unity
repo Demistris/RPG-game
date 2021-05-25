@@ -2728,12 +2728,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9019744180525614219}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1786874624 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2694961246442400357, guid: a53af42080b8b664ab813d6ad38bf873,
-    type: 3}
-  m_PrefabInstance: {fileID: 2694961247138685285}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1816642270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,10 +3799,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: _signalEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5292585813024059121, guid: 5508337849a88b14fae3d491062cabf0,
         type: 3}
       propertyPath: m_Name
@@ -3827,12 +3817,12 @@ PrefabInstance:
     - target: {fileID: 5292585813024059124, guid: 5508337849a88b14fae3d491062cabf0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.003448
+      value: 7.996552
       objectReference: {fileID: 0}
     - target: {fileID: 5292585813024059124, guid: 5508337849a88b14fae3d491062cabf0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5292585813024059124, guid: 5508337849a88b14fae3d491062cabf0,
         type: 3}
@@ -3874,10 +3864,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 1786874624}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5508337849a88b14fae3d491062cabf0, type: 3}
 --- !u!1001 &5788834575812777532
