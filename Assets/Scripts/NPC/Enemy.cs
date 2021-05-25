@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public EnemyState CurrentState;
 
     [SerializeField] protected FloatValue _maxHealth;
+    [SerializeField] protected LootTable _lootTable;
     [SerializeField] protected string _name;
     [SerializeField] protected float _health;
     [SerializeField] protected int _baseAttack;
@@ -57,7 +58,21 @@ public class Enemy : MonoBehaviour
         if(_deathEffectPrefab != null)
         {
             GameObject deathEffect = Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+            MakeLoot();
             Destroy(deathEffect, _timeToDestroy);
+        }
+    }
+
+    private void MakeLoot()
+    {
+        if(_lootTable != null)
+        {
+            PowerUp currentLoot = _lootTable.LootPowerUp();
+
+            if(currentLoot != null)
+            {
+                Instantiate(currentLoot.gameObject, transform.position, Quaternion.identity);
+            }
         }
     }
 

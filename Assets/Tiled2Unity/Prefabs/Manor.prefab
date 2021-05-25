@@ -5032,7 +5032,7 @@ GameObject:
   - component: {fileID: 736017474175572783}
   - component: {fileID: 4760400026348185148}
   m_Layer: 0
-  m_Name: City
+  m_Name: Manor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

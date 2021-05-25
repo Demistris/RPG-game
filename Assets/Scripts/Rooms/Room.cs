@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Cinemachine;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour
@@ -7,10 +8,12 @@ public class Room : MonoBehaviour
 
     [SerializeField] protected List<Enemy> _enemies = new List<Enemy>();
     [SerializeField] private ObjectBreaker[] _breakableObjects;
+    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
 
     private void Start()
     {
         ChangeActivation(false);
+        _virtualCamera.m_Follow = GameObject.FindWithTag("Player").transform;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +45,8 @@ public class Room : MonoBehaviour
 
     protected void ChangeActivation(bool activation)
     {
+        _virtualCamera.gameObject.SetActive(activation);
+
         for (int i = 0; i < _enemies.Count; i++)
         {
             if (_enemies[i] != null)

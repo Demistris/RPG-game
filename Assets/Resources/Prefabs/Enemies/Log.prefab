@@ -194,13 +194,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: 0
   _maxHealth: {fileID: 11400000, guid: d47c38187a9bb8c48a5f65ddfd967227, type: 2}
+  _lootTable: {fileID: 11400000, guid: a9595e27f133939468c1ca9ddd469fc4, type: 2}
   _name: Larry the Log
   _health: 2
   _baseAttack: 1
   _moveSpeed: 1.5
   _deathEffectPrefab: {fileID: 2223158592704806693, guid: 779dd78958eeab544b0a90dc151f4492,
     type: 3}
-  _homePosition: {fileID: 0}
   _rigidbody: {fileID: 1938956583038177468}
   _animator: {fileID: 1938956583038177469}
   _chaseRadius: 4

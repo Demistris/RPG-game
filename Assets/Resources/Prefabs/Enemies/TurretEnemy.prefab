@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: 0
   _maxHealth: {fileID: 11400000, guid: d47c38187a9bb8c48a5f65ddfd967227, type: 2}
+  _lootTable: {fileID: 11400000, guid: a9595e27f133939468c1ca9ddd469fc4, type: 2}
   _name: Dabbie
   _health: 0
   _baseAttack: 0
