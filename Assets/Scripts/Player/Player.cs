@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private SpriteRenderer _receivedItemSprite;
     [SerializeField] private Signal _playerHit;
+    [SerializeField] private GameObject _arrowPrefab;
 
     [SerializeField] private float _moveSpeed;
 
@@ -50,6 +51,10 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(AttackCoroutine());
         }
+        else if(Input.GetButtonDown("SecondWeapon") && CurrentState != PlayerState.Attack && CurrentState != PlayerState.Stagger)
+        {
+            StartCoroutine(SecondAttackCoroutine());
+        }
         else if(CurrentState == PlayerState.Walk || CurrentState == PlayerState.Idle)
         {
             MovePlayer();
@@ -69,6 +74,38 @@ public class Player : MonoBehaviour
         {
             CurrentState = PlayerState.Walk;
         }
+    }
+
+    private IEnumerator SecondAttackCoroutine()
+    {
+        //_animator.SetBool("Attacking", true);
+        CurrentState = PlayerState.Attack;
+        yield return null;
+        MakeArrow();
+        //_animator.SetBool("Attacking", false);
+        yield return new WaitForSeconds(.3f);
+
+        if (CurrentState != PlayerState.Interact)
+        {
+            CurrentState = PlayerState.Walk;
+        }
+    }
+
+    private void MakeArrow()
+    {
+        float x = _animator.GetFloat("Horizontal");
+        float y = _animator.GetFloat("Vertical");
+
+        Vector2 playerDirection = new Vector2(x, y);
+        Arrow arrow = Instantiate(_arrowPrefab, transform.position, Quaternion.identity).GetComponent<Arrow>();
+
+        arrow.Setup(playerDirection, ChooseArrowRotation(x, y));
+    }
+
+    private Vector3 ChooseArrowRotation(float x, float y)
+    {
+        float playerRotation = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        return new Vector3(transform.rotation.x, transform.rotation.y, playerRotation);
     }
 
     public void RaiseItem()

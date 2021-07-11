@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5081825639420894136}
   - component: {fileID: 4692173023710126318}
   - component: {fileID: 2566570388598809491}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4282288261883715289}
   - component: {fileID: 3068389295815286359}
   - component: {fileID: 7738257590177188084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4240890207769856660}
   - component: {fileID: 4240890207769856662}
   - component: {fileID: 9084011187989063632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ogre
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 550295114138388874}
   - component: {fileID: 3228827612502887084}
   - component: {fileID: 8819169378349064322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 2912520795024653101}
   - component: {fileID: 380546759234784745}
   - component: {fileID: 6120877540778504227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

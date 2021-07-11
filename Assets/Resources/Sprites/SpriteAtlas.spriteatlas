@@ -247,6 +247,7 @@ SpriteAtlas:
   - {fileID: -7597207668663345718, guid: 0c73ca444c133cf489a9efc32bc82183, type: 3}
   - {fileID: 6119314509959758635, guid: 0c73ca444c133cf489a9efc32bc82183, type: 3}
   - {fileID: 8627847960000431974, guid: 0c73ca444c133cf489a9efc32bc82183, type: 3}
+  - {fileID: 21300000, guid: 699b0df5cb9ad824b84babec3221ae65, type: 3}
   - {fileID: 4058882637061436657, guid: 2bd0d8c672d03f14c8a13ce2010621fb, type: 3}
   - {fileID: 1522305984107872113, guid: 2bd0d8c672d03f14c8a13ce2010621fb, type: 3}
   - {fileID: -661973496601677656, guid: 2bd0d8c672d03f14c8a13ce2010621fb, type: 3}
@@ -476,6 +477,7 @@ SpriteAtlas:
   - {fileID: 1777361459721282548, guid: 38dec73c3b5ceb843912cd043311a245, type: 3}
   - {fileID: 2670572250263382453, guid: 38dec73c3b5ceb843912cd043311a245, type: 3}
   - {fileID: 5700767193190630657, guid: 38dec73c3b5ceb843912cd043311a245, type: 3}
+  - {fileID: 21300000, guid: 9199f6dc1ad5b414383a4acda53ac848, type: 3}
   - {fileID: 136123638574666257, guid: 51ae2f5e5f9eba2499da2e04ef03e28e, type: 3}
   - {fileID: 293919518158258091, guid: 51ae2f5e5f9eba2499da2e04ef03e28e, type: 3}
   - {fileID: -2417109873707893127, guid: 51ae2f5e5f9eba2499da2e04ef03e28e, type: 3}
@@ -1751,6 +1753,7 @@ SpriteAtlas:
   - orge_6
   - orge_9
   - orge_8
+  - Bow
   - Player_39
   - Player_18
   - Player_19
@@ -1980,6 +1983,7 @@ SpriteAtlas:
   - orge attack sprites_13
   - orge attack sprites_10
   - orge attack sprites_11
+  - Arrow
   - Overworld_827
   - Overworld_837
   - Overworld_847

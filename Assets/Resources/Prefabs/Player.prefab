@@ -476,6 +476,8 @@ MonoBehaviour:
   _playerInventory: {fileID: 11400000, guid: 9069b30bee61f6640afa0eb83e290d3e, type: 2}
   _receivedItemSprite: {fileID: 2874600289409302887}
   _playerHit: {fileID: 11400000, guid: b6cdb5f27b814044f9c1c5597ba324ea, type: 2}
+  _arrowPrefab: {fileID: 5929481018801629200, guid: 0f8c49044c70f3f44b8f9b4ba35552f9,
+    type: 3}
   _moveSpeed: 30
 --- !u!114 &5937511219346685584
 MonoBehaviour:
