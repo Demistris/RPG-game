@@ -8,6 +8,9 @@ public class Inventory : ScriptableObject
     public int NumberOfKeys;
     public int Coins;
 
+    public float MaxMagic = 10f;
+    public float CurrentMagic = 10f;
+
     [SerializeField] private List<Item> _items = new List<Item>();
 
     public void AddItem(Item itemToAdd)

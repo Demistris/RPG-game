@@ -215,10 +215,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _context: {fileID: 11400000, guid: 1f9ce3896ab337a45a47cda50e0f8314, type: 2}
   _thisDoorType: 0
-  _isOpen: 0
   _playerInventory: {fileID: 11400000, guid: 9069b30bee61f6640afa0eb83e290d3e, type: 2}
+  _room: {fileID: 0}
   _openedDoor: {fileID: 2981513155575125606}
   _closedDoor: {fileID: 2981513155891751056}
+  _isOpen: 0
 --- !u!1 &2981513156564793442
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2981513156564793442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.499, y: 23.442, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2981513155891751063}

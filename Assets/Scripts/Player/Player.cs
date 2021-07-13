@@ -17,11 +17,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Animator _animator;
     [SerializeField] private FloatValue _currentHealth;
-    [SerializeField] private Signal _playerHealthSignal;
     [SerializeField] private VectorValue _startingPosition;
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private SpriteRenderer _receivedItemSprite;
+    [SerializeField] private Signal _playerHealthSignal;
     [SerializeField] private Signal _playerHit;
+    [SerializeField] private Signal _decreaseMagic;
     [SerializeField] private GameObject _arrowPrefab;
 
     [SerializeField] private float _moveSpeed;
@@ -93,13 +94,18 @@ public class Player : MonoBehaviour
 
     private void MakeArrow()
     {
-        float x = _animator.GetFloat("Horizontal");
-        float y = _animator.GetFloat("Vertical");
+        if (_playerInventory.CurrentMagic > 0)
+        {
+            float x = _animator.GetFloat("Horizontal");
+            float y = _animator.GetFloat("Vertical");
 
-        Vector2 playerDirection = new Vector2(x, y);
-        Arrow arrow = Instantiate(_arrowPrefab, transform.position, Quaternion.identity).GetComponent<Arrow>();
+            Vector2 playerDirection = new Vector2(x, y);
+            Arrow arrow = Instantiate(_arrowPrefab, transform.position, Quaternion.identity).GetComponent<Arrow>();
 
-        arrow.Setup(playerDirection, ChooseArrowRotation(x, y));
+            arrow.Setup(playerDirection, ChooseArrowRotation(x, y));
+
+            _decreaseMagic.Raise();
+        }
     }
 
     private Vector3 ChooseArrowRotation(float x, float y)

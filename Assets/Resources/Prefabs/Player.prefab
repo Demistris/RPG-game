@@ -470,12 +470,13 @@ MonoBehaviour:
   _rigidbody: {fileID: 2694961246442400356}
   _animator: {fileID: 2694961246442400353}
   _currentHealth: {fileID: 11400000, guid: e452fd1975c5c2b4ca0a748d6c9b6627, type: 2}
-  _playerHealthSignal: {fileID: 11400000, guid: 2caa6a44ef7cbf34ab628bb2de21701d,
-    type: 2}
   _startingPosition: {fileID: 11400000, guid: ed7be4f4c5a62a644afd1e4346ecc6aa, type: 2}
   _playerInventory: {fileID: 11400000, guid: 9069b30bee61f6640afa0eb83e290d3e, type: 2}
   _receivedItemSprite: {fileID: 2874600289409302887}
+  _playerHealthSignal: {fileID: 11400000, guid: 2caa6a44ef7cbf34ab628bb2de21701d,
+    type: 2}
   _playerHit: {fileID: 11400000, guid: b6cdb5f27b814044f9c1c5597ba324ea, type: 2}
+  _decreaseMagic: {fileID: 11400000, guid: 21667d20401aa5446a3e8fe3ca776c06, type: 2}
   _arrowPrefab: {fileID: 5929481018801629200, guid: 0f8c49044c70f3f44b8f9b4ba35552f9,
     type: 3}
   _moveSpeed: 30
